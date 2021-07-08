@@ -1,21 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <NavBar />
   </div>
 </template>
 
+<script>
+import NavBar from "@/views/NavBar.vue";
+export default {
+  name: "App",
+  components: {
+    NavBar,
+  },
+};
+</script>
+
 <style lang="scss">
-$color: red;
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $color;
+  color: $main-color;
 }
 
 #nav {
@@ -23,10 +29,10 @@ $color: red;
 
   a {
     font-weight: bold;
-    color: $color;
+    color: $main-color;
 
     &.router-link-exact-active {
-      color: $color;
+      color: $main-color;
     }
   }
 }
