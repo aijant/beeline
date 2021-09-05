@@ -1,121 +1,78 @@
 <template>
-  <section>
+  <section class="menu">
     <nav>
-      <ul class="navigation">
+      <ul class="menu__links">
         <li>
-          <router-link to="/">Помощь</router-link>
+          <span>MedicalRecover</span>
         </li>
         <li>
-          <router-link to="/about">О компании</router-link>
+          <router-link to="/#">Home</router-link>
         </li>
         <li>
-          <router-link to="/about">Карта офисов</router-link>
+          <router-link to="/#">Product</router-link>
         </li>
         <li>
-          <router-link to="/about">Акции и новости</router-link>
+          <router-link to="/#">Pricing</router-link>
         </li>
         <li>
-          <router-link to="/about">Beeline Рахмат</router-link>
+          <router-link to="/#">Content</router-link>
         </li>
       </ul>
-      <div class="buttons">
-        <a class="btn-ru" href="#">ru</a><span>/</span>
-        <a class="btn-kg" href="#">kg</a>
-        <a class="btn-per" href="#">Частным лицам</a><span>/</span>
-        <a class="btn-bis" href="#">Бизнесу</a>
-      </div>
       <router-view />
     </nav>
-
-    <nav>
-      <ul class="navigation">
-        <li>
-          <a href="#"><img src="@/assets/vector.png" alt="vector"/></a>
-        </li>
-        <li>
-          <router-link to="/">Перейти в Билайн </router-link>
-        </li>
-        <li>
-          <router-link to="/">Тарифы</router-link>
-        </li>
-        <li>
-          <router-link to="/">Услуги</router-link>
-        </li>
-        <li>
-          <router-link to="/">Пополнить баланс</router-link>
-        </li>
-        <li>
-          <router-link to="/">Приложения</router-link>
-        </li>
-        <li>
-          <router-link to="/">Еще</router-link>
-        </li>
-      </ul>
-      <button type="button">Войти</button>
-      <router-view />
-    </nav>
+    <section class="menu__btn">
+      <input class="menu__login" type="button" value="Login" />
+      <input class="menu__join-us" type="button" value="Join us" />
+    </section>
   </section>
 </template>
 
-<style lang="scss">
-section {
-  padding: 0 calc(15% - 15px);
-}
+<style lang="scss" scoped>
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background: #fafafa;
 
-nav {
-  margin: 30px;
-
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-}
-
-.navigation {
-  list-style: none;
-  float: left;
-
-  li {
-    display: inline-block;
-    margin-left: 30px;
+  &__links {
+    display: flex;
+    list-style: none;
+    margin-top: 13px;
 
     &:first-child {
-      margin: 0;
+      color: #000;
+      font-size: 20px;
+      font-weight: bold;
     }
+
     a {
       text-decoration: none;
-      color: $main-color;
+      color: #000;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 33px 34px;
     }
   }
-}
 
-.btn-ru,
-.btn-kg,
-.btn-per,
-.btn-bis {
-  text-decoration: none;
-  color: $main-color;
-
-  &:hover {
-    background-color: darken($color-secondary, 10%);
+  &__btn {
+    margin-top: 7px;
   }
-}
 
-.btn-kg {
-  margin-right: 12px;
-}
+  &__login {
+    margin-right: 45px;
+    color: #FF685B;
+    border: none;
+    background: none;
+  }
 
-.btn-ru {
-  margin-left: 12px;
-}
-
-.btn-per {
-  margin-left: 12px;
-  padding-left: 8px;
-}
-
-.buttons span {
-  margin: 4px;
+  &__join-us {
+    color: #fff;
+    background: #FF685B;
+    width: 137px;
+    height: 52px;
+    border-radius: 5px;
+    padding: 15px 25px;
+    border: none;
+    text-transform: uppercase;
+  }
 }
 </style>
